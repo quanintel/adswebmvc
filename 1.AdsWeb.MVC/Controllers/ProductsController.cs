@@ -6,18 +6,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace _1.AdsWeb.MVC.Controllers;
 
-public class HomeController : Controller
+public class ProductsController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ILogger<ProductsController> _logger;
     private readonly AdswebContext _dbContext;
     
-    public HomeController(ILogger<HomeController> logger, AdswebContext dbContext)
+    public ProductsController(ILogger<ProductsController> logger, AdswebContext dbContext)
     {
         _logger = logger;
         _dbContext = dbContext;
     }
-
-    public async Task<IActionResult> Index()
+    
+    public async Task<IActionResult> Index(string url)
     {
         var lstProducts = await _dbContext.Products.ToListAsync();
         for (int i = 0; i < 100; i++)
@@ -25,13 +25,13 @@ public class HomeController : Controller
             lstProducts.Add(lstProducts.First());
         }
         ViewBag.Products = lstProducts;
-        
-        return View();
+        var objProduct = lstProducts.FirstOrDefault(x => x.Url.Equals(url));
+        return View(objProduct ?? new Product());
     }
     
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        return View(new ErrorViewModel() { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
