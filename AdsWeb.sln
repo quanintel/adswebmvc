@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.AdsWeb.MVC", "1.AdsWeb.MVC\1.AdsWeb.MVC.csproj", "{CCD119E6-3AAC-4B7E-9507-FDC521EBA526}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.AdsWeb.Entities", "2.AdsWeb.Entities\2.AdsWeb.Entities.csproj", "{A019D7B1-777D-403D-BB95-14E73B1C7862}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCD119E6-3AAC-4B7E-9507-FDC521EBA526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCD119E6-3AAC-4B7E-9507-FDC521EBA526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCD119E6-3AAC-4B7E-9507-FDC521EBA526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCD119E6-3AAC-4B7E-9507-FDC521EBA526}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A019D7B1-777D-403D-BB95-14E73B1C7862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A019D7B1-777D-403D-BB95-14E73B1C7862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A019D7B1-777D-403D-BB95-14E73B1C7862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A019D7B1-777D-403D-BB95-14E73B1C7862}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

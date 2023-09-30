@@ -1,0 +1,10 @@
+﻿//Install
+dotnet SDK x64 WindowsInstaller
+dotnet tool install --global dotnet-ef
+
+
+dotnet add package MySql.EntityFrameworkCore --version 7.0.2
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+
+//Gen
+dotnet ef dbcontext scaffold "server=localhost;uid=root;pwd=7850323;database=adsweb" MySql.EntityFrameworkCore -o Entities -f
