@@ -11,19 +11,19 @@ public partial class Product
 
     public string Name { get; set; } = null!;
 
+    public int? Sale { get; set; }
+
+    public int? Price { get; set; }
+
     public string? Description { get; set; }
 
     public string Url { get; set; } = null!;
 
-    public string ImgUrl { get; set; } = null!;
-
-    public long CategoryId { get; set; }
+    public string? ImgUrl { get; set; }
 
     public DateTime? CreatedDate { get; set; }
 
     public DateTime? ModifiedDate { get; set; }
 
-    public ulong? IsDelete { get; set; }
-
-    public virtual Category Category { get; set; } = null!;
+    public bool? IsDelete { get; set; }
 }

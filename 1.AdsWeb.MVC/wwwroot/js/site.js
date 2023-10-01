@@ -100,5 +100,22 @@
         }
         button.parent().parent().find('input').val(newVal);
     });
+
+    //Pagination
+    const items = $('body .lstProducts .itProduct')
+    const perPage = 8
+    items.slice(perPage).hide();
+    $('#pagination-container').pagination({
+        items: items.length,
+        itemsOnPage: perPage,
+        prevText: "&laquo;",
+        nextText: "&raquo;",
+        onPageClick: function (pageNumber) {
+            let showFrom = perPage * (pageNumber - 1);
+            let showTo = showFrom + perPage;
+            items.hide().slice(showFrom, showTo).show();
+        }
+    });
+    
 })(jQuery);
 

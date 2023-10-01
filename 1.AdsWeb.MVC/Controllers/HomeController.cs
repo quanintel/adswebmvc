@@ -9,23 +9,20 @@ namespace _1.AdsWeb.MVC.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly AdswebContext _dbContext;
+    private readonly ApplicationDbContext _dbContext;
+    private readonly IWebHostEnvironment _appEnvironment;
     
-    public HomeController(ILogger<HomeController> logger, AdswebContext dbContext)
+    public HomeController(ILogger<HomeController> logger, ApplicationDbContext dbContext, IWebHostEnvironment appEnvironment)
     {
         _logger = logger;
         _dbContext = dbContext;
+        _appEnvironment = appEnvironment;
     }
 
     public async Task<IActionResult> Index()
     {
         var lstProducts = await _dbContext.Products.ToListAsync();
-        for (int i = 0; i < 100; i++)
-        {
-            lstProducts.Add(lstProducts.First());
-        }
         ViewBag.Products = lstProducts;
-        
         return View();
     }
     

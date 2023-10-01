@@ -45,9 +45,9 @@
             </div>
         </h2>
         <div class="col-lg-4 col-6 text-left pt-3 pb-3" style="padding-right: unset">
-            <div class="input-group">
-                <input type="text" class="form-control" id="search-products" placeholder="Tìm kiếm sản phẩm">
-            </div>
+            @* <div class="input-group"> *@
+            @*     <input type="text" class="form-control" id="search-products" placeholder="Tìm kiếm sản phẩm"> *@
+            @* </div> *@
         </div>
     </div>
 
@@ -75,22 +75,6 @@
         }
     </div>
     <div id="pagination-container" class="d-flex justify-content-center"></div>
-    <script>
-        //Pagingnation
-        items.slice(perPage).hide();
-    
-        $('#pagination-container').pagination({
-            items: items.length,
-            itemsOnPage: 16,
-            prevText: "&laquo;",
-            nextText: "&raquo;",
-            onPageClick: function (pageNumber) {
-                var showFrom = perPage * (pageNumber - 1);
-                var showTo = showFrom + perPage;
-                items.hide().slice(showFrom, showTo).show();
-            }
-        });
-    </script>
 </div>
 <!-- Products End -->
 

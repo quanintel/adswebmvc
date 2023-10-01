@@ -3,8 +3,9 @@ dotnet SDK x64 WindowsInstaller
 dotnet tool install --global dotnet-ef
 
 
-dotnet add package MySql.EntityFrameworkCore --version 7.0.2
-dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 7.0.2
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 7.0.2
 
 //Gen
-dotnet ef dbcontext scaffold "server=localhost;uid=root;pwd=7850323;database=adsweb" MySql.EntityFrameworkCore -o Entities -f
+dotnet ef dbcontext scaffold "Data Source=112.78.2.40;Initial Catalog=qua74634_adsweb;uid=qua74634_qua74634;pwd=3L8geg^67;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer --context ApplicationDbContext -o Entities --use-database-names --no-build
+dotnet ef dbcontext scaffold "Data Source=.\MSSQLSERVE2020;Initial Catalog=qua74634_adsweb;uid=sa;pwd=3L8geg^67;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer --context ApplicationDbContext -o Entities --use-database-names --no-build

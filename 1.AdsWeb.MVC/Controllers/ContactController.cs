@@ -1,30 +1,30 @@
 ﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using _1.AdsWeb.MVC.Models;
 using _2.AdsWeb.Entities.Entities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace _1.AdsWeb.MVC.Controllers;
 
-public class ProductsController : Controller
+public class ContactController : Controller
 {
-    private readonly ILogger<ProductsController> _logger;
+    private readonly ILogger<ContactController> _logger;
     private readonly ApplicationDbContext _dbContext;
     
-    public ProductsController(ILogger<ProductsController> logger, ApplicationDbContext dbContext)
+    public ContactController(ILogger<ContactController> logger, ApplicationDbContext dbContext)
     {
         _logger = logger;
         _dbContext = dbContext;
     }
     
-    public async Task<IActionResult> Index(string url)
+    public async Task<IActionResult> Index()
     {
         var lstProducts = await _dbContext.Products.ToListAsync();
         ViewBag.Products = lstProducts;
-        var objProduct = lstProducts.FirstOrDefault(x => x.Url.Equals(url));
-        return View(objProduct ?? new Product());
+        
+        return View();
     }
-    
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

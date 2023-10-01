@@ -9,9 +9,9 @@ namespace _1.AdsWeb.MVC.Controllers;
 public class AboutController : Controller
 {
     private readonly ILogger<AboutController> _logger;
-    private readonly AdswebContext _dbContext;
+    private readonly ApplicationDbContext _dbContext;
     
-    public AboutController(ILogger<AboutController> logger, AdswebContext dbContext)
+    public AboutController(ILogger<AboutController> logger, ApplicationDbContext dbContext)
     {
         _logger = logger;
         _dbContext = dbContext;
@@ -20,10 +20,6 @@ public class AboutController : Controller
     public async Task<IActionResult> Index()
     {
         var lstProducts = await _dbContext.Products.ToListAsync();
-        for (int i = 0; i < 100; i++)
-        {
-            lstProducts.Add(lstProducts.First());
-        }
         ViewBag.Products = lstProducts;
         
         return View();

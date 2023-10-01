@@ -3,18 +3,12 @@
     <div class="row px-xl-5">
         <div class="col">
             <div class="owl-carousel vendor-carousel">
-                <div class="bg-light p-4">
-                    <img src="" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="" alt="">
-                </div>
+                @foreach (var item in ViewBag.Products)
+                {
+                    <div class="bg-light p-4">
+                        <img src="@($"/img{item.ImgUrl}")" alt="@item.Name">
+                    </div>
+                }
             </div>
         </div>
     </div>
